@@ -6,29 +6,33 @@ body{
 }
 
 .container{
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: [first] auto [second] auto [desc] 5fr;
-  grid-template-rows: auto; 
-  align-items: center;
   margin: 50px;
-  width: 60%;
+  // width: 100%;
 }
 
+
 .ingredient-list{
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: [first] auto [second] auto [desc] 5fr [pic] 5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;	
   background-color: #F4D3A8;
   border-radius: 20px;
 }
 
 
-// .img-thumb {
-//   object-fit: cover;
-//   border-radius: 20px;
-//   height: 50px;
-//   padding: 10px;
-//   margin: 10px;  
-//   justify-self: center;
-// }
+.img-ingredients {
+  grid-column: pic;
+  grid-row: 1/-1;
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px; 
+  justify-self: center;
+  // margin: 10px;
+
+}
 
 .first-column{
 	grid-column: first;
@@ -37,7 +41,7 @@ body{
 	grid-column: second;
 }
 .first-column, .second-column{
-	border: solid;
+	// border: solid;
 	text-align: center;
 }
 .desc{
@@ -53,6 +57,7 @@ body{
 	margin: 10px 20px;
 	font-size: 2em;
 	color: #5A3120;
+	border: none;
 	border-radius: 20px;
 	background-color: antiquewhite;
 	height: auto;
@@ -60,10 +65,16 @@ body{
 }
 
 
-@media screen and (max-width: 600px) {
-  .container{
+@media screen and (max-width: 800px) {
+  .container, .img-ingredients{
     width: 100%;
     margin: 0px;
+  }
+  .img-ingredients {  	
+	border-radius: 5px;
+	// max-height: 200px;
+	height: 100%;
+
   }
 
 	.measurement{
@@ -72,6 +83,6 @@ body{
 		margin: 0px;
 		color: #5A3120;
 		border: none;
-		border-radius: 5px;
+		border-radius: 0px;
 	}  
 }

@@ -3,17 +3,25 @@ body {
   font-family: 'Roboto Mono', monospace; }
 
 .container {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: [first] auto [second] auto [desc] 5fr;
-  grid-template-rows: auto;
-  align-items: center;
-  margin: 50px;
-  width: 60%; }
+  margin: 50px; }
 
 .ingredient-list {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: [first] auto [second] auto [desc] 5fr [pic] 5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
   background-color: #F4D3A8;
   border-radius: 20px; }
+
+.img-ingredients {
+  grid-column: pic;
+  grid-row: 1/-1;
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  justify-self: center; }
 
 .first-column {
   grid-column: first; }
@@ -22,7 +30,6 @@ body {
   grid-column: second; }
 
 .first-column, .second-column {
-  border: solid;
   text-align: center; }
 
 .desc {
@@ -37,19 +44,23 @@ body {
   margin: 10px 20px;
   font-size: 2em;
   color: #5A3120;
+  border: none;
   border-radius: 20px;
   background-color: antiquewhite;
   height: auto;
   line-height: auto; }
 
-@media screen and (max-width: 600px) {
-  .container {
+@media screen and (max-width: 800px) {
+  .container, .img-ingredients {
     width: 100%;
     margin: 0px; }
+  .img-ingredients {
+    border-radius: 5px;
+    height: 100%; }
   .measurement {
     background-color: inherit;
     font-size: 1em;
     margin: 0px;
     color: #5A3120;
     border: none;
-    border-radius: 5px; } }
+    border-radius: 0px; } }
