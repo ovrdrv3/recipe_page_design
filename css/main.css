@@ -2,65 +2,50 @@ body {
   background-color: antiquewhite;
   font-family: 'Roboto Mono', monospace; }
 
+h1 {
+  color: #5A3120;
+  font-size: 3em; }
+
+li {
+  list-style: none; }
+
 .container {
-  margin: 50px; }
+  margin: 20px; }
 
 .ingredient-list {
   display: grid;
-  grid-gap: 15px;
-  grid-template-columns: [first] auto [second] auto [desc] 5fr [pic] 5fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: [desc] 2fr [pic] 1fr;
   align-items: center;
-  background-color: #F4D3A8;
+  background-color: #999955;
   border-radius: 20px; }
 
 .img-ingredients {
   grid-column: pic;
-  grid-row: 1/-1;
-  max-width: 80%;
+  max-width: 500px;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
-  justify-self: center; }
-
-.first-column {
-  grid-column: first; }
-
-.second-column {
-  grid-column: second; }
-
-.first-column, .second-column {
-  text-align: center; }
-
-.desc {
-  grid-column: desc;
-  border: none;
-  text-align: left; }
+  justify-self: center;
+  margin: 10px; }
 
 .measurement {
-  align-self: center;
-  overflow: auto;
-  padding: 5px;
-  margin: 10px 20px;
-  font-size: 2em;
-  color: #5A3120;
-  border: none;
-  border-radius: 20px;
-  background-color: antiquewhite;
-  height: auto;
-  line-height: auto; }
+  font-size: 2.5em;
+  color: #5A3120; }
+
+.measurement:hover {
+  background-color: antiquewhite; }
 
 @media screen and (max-width: 800px) {
   .container, .img-ingredients {
-    width: 100%;
-    margin: 0px; }
-  .img-ingredients {
-    border-radius: 5px;
-    height: 100%; }
-  .measurement {
-    background-color: inherit;
-    font-size: 1em;
     margin: 0px;
-    color: #5A3120;
-    border: none;
-    border-radius: 0px; } }
+    width: 100%; }
+  .ingredient-list {
+    grid-template: "ingredients" "pic";
+    border-radius: 5px; }
+  .img-ingredients {
+    border-radius: 5px; }
+  h1 {
+    font-size: 2em; }
+  .measurement {
+    font-size: 1em;
+    margin: 0px; } }
