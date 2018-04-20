@@ -9,6 +9,18 @@ h1 {
 li {
   list-style: none; }
 
+.ingredient-list > div > ul > li {
+  display: flex; }
+
+.ingredient-list > div > ul > li > div:first-child {
+  text-align: right;
+  flex: 1 1 50px;
+  padding-right: 50px; }
+
+.ingredient-list > div > ul > li > div:last-child {
+  text-align: left;
+  flex: 3 0 200px; }
+
 .container {
   margin: 20px; }
 
