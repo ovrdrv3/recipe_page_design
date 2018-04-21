@@ -1,6 +1,10 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 body {
   background-color: antiquewhite;
-  font-family: 'Roboto Mono', monospace; }
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; }
 
 h1 {
   color: #5A3120;
@@ -14,15 +18,15 @@ li {
 
 .ingredient-list > div > ul > li > div:first-child {
   text-align: right;
-  flex: 1 1 50px;
+  flex: 1 0 75px;
   padding-right: 50px; }
 
 .ingredient-list > div > ul > li > div:last-child {
   text-align: left;
-  flex: 3 0 200px; }
+  flex: 3 0 400px; }
 
 .container {
-  margin: 20px; }
+  margin: 50px; }
 
 .ingredient-list {
   display: grid;
@@ -33,7 +37,7 @@ li {
 
 .img-ingredients {
   grid-column: pic;
-  max-width: 500px;
+  max-width: 600px;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
@@ -41,7 +45,7 @@ li {
   margin: 10px; }
 
 .measurement {
-  font-size: 2.5em;
+  font-size: 2em;
   color: #5A3120; }
 
 .measurement:hover {
@@ -53,11 +57,17 @@ li {
     width: 100%; }
   .ingredient-list {
     grid-template: "ingredients" "pic";
-    border-radius: 5px; }
+    border-radius: 5px;
+    padding: 10px; }
+  .ingredient-list > div > ul > li > div:first-child {
+    text-align: left;
+    flex: 1 1 100px;
+    padding-right: 0px; }
   .img-ingredients {
-    border-radius: 5px; }
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%; }
   h1 {
     font-size: 2em; }
   .measurement {
-    font-size: 1em;
-    margin: 0px; } }
+    font-size: 1em; } }
